@@ -48,20 +48,32 @@ and flashes a microSD card — for **Windows, macOS and Linux**.
 
 ## Install
 
-Unzip the package, then run the installer for your system:
+One installer for every system. Download the installer package (or
+clone this repo), then run the starter for your system:
 
-| System  | Install | Uninstall |
-|---------|---------|-----------|
-| Windows | double-click `install_windows.bat` | Settings → Apps, or `uninstall_windows.bat` |
-| macOS   | double-click `install_macos.command` (right-click → Open the first time) | `uninstall_macos.command` in the app folder |
-| Linux   | `bash install_linux.sh` | `uninstall_linux.sh` in the app folder, or the app's option 8 |
+| System  | Run this |
+|---------|----------|
+| Windows | double-click `Setup-Windows.bat` |
+| macOS   | double-click `Setup-Mac.command` (right-click → Open the first time) |
+| Linux   | `bash Setup-Linux.sh` |
 
-Everything (app + downloaded OS + Etcher) lives in one folder, so the
-toolkit is self-contained:
+The starter only makes sure Python 3 is present (installing it if
+needed), then hands over to **one universal installer**,
+`RaspIOSex-Me-Baby-Setup.py`. The installer **detects whether you're on
+Windows, macOS or Linux and installs the matching version** — the right
+install folder, shortcuts/launchers and uninstaller for your system:
 
-- Windows: `%LOCALAPPDATA%\RaspIOSex-Me-Baby`
-- macOS: `~/Applications/RaspIOSex-Me-Baby`
-- Linux: `~/.local/share/raspiosex-me-baby`
+- Windows: `%LOCALAPPDATA%\RaspIOSex-Me-Baby`, Desktop + Start Menu
+  shortcuts, and an entry in Settings → Apps
+- macOS: `~/Applications/RaspIOSex-Me-Baby` + a Desktop launcher
+- Linux: `~/.local/share/raspiosex-me-baby`, a `raspiosex-me-baby`
+  command, and an applications-menu entry
+
+**Uninstall:** run the uninstaller placed in the install folder, or
+`RaspIOSex-Me-Baby-Setup.py --uninstall`.
+
+*(Developers: `build_installer.py` rebuilds the Setup file with the
+current app embedded.)*
 
 ## First run
 

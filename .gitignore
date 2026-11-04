@@ -1,0 +1,7 @@
+# Downloaded at install/run time by the toolkit - never committed
+library/
+*.img
+*.img.xz
+*.zip
+__pycache__/
+.DS_Store
